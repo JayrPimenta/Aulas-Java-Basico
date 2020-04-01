@@ -1,0 +1,36 @@
+package aplicacao;
+
+import java.util.Locale;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Programa {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		List<String> lista = new ArrayList<>();
+		
+		lista.add("Jayr"); //add adiciona um item a lista
+		lista.add("Joice");
+		lista.add("Humberto");
+		lista.add("Jaysa");
+		
+		lista.add(2, "Ana");
+		lista.add(3, "Marcia");
+		
+		System.out.println("Tamanho da lista: "+lista.size()); // size() retorna a quantidade de itens na lista
+		
+		for (String nome : lista) {
+			System.out.println(nome);
+		}
+		
+		
+		
+		
+		sc.close();
+	}
+
+}

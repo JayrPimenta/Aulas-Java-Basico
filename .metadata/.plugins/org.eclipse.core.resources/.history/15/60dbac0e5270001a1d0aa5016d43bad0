@@ -1,0 +1,62 @@
+package aplicacao;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
+
+import entidades.Funcionario;
+
+public class Programa {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);		
+		
+		List<Funcionario> listaDeFuncionarios = new ArrayList<>();
+		
+		System.out.print("Quantos funcioários deseja registrar? ");
+		int numeroDeFuncionarios = sc.nextInt();
+		System.out.println();
+				
+		for (int i = 1; i <= numeroDeFuncionarios; i++) {
+			System.out.println("Funcionário #"+ i +":");
+			System.out.print("Id: ");
+			Integer idDoFuncionario = sc.nextInt();
+			sc.nextLine();
+			System.out.print("Nome: ");
+			String nomeDoFuncionario = sc.nextLine();
+			System.out.print("Salário: ");
+			Double salarioDoFuncionario = sc.nextDouble();
+			System.out.println();
+			listaDeFuncionarios.add(new Funcionario(idDoFuncionario, nomeDoFuncionario, salarioDoFuncionario));
+			
+		}
+		
+		System.out.print("Informe o codigo do funcionário que receberá o almento de salário: ");
+		int id = sc.nextInt();
+		
+		listaDeFuncionarios.get(0);
+		
+		/*
+		Funcionario beneficiarioDoAumento = listaDeFuncionarios.stream().filter(idBeneficiario -> idBeneficiario.getIdDoFuncionario() == id).findFirst().orElse(null);
+		
+		if (beneficiarioDoAumento != null) {
+			System.out.print("Informe o porcentual do aumento: ");
+			Double porcentagemDeAumento = sc.nextDouble();
+			beneficiarioDoAumento.aumentoDeSalario(porcentagemDeAumento);
+		} else {
+			System.out.println("Id não informado, não corresponde a um id valido.");
+		}		
+		
+		System.out.println();
+		System.out.println("Lista de funcionários cadastrados:");
+		
+		for (Funcionario listaDeFuncionariosCadastrados : listaDeFuncionarios) {
+			System.out.println(listaDeFuncionariosCadastrados);
+		}
+		*/
+		sc.close();
+	}
+
+}

@@ -1,0 +1,76 @@
+package aplicacao;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+public class Programa {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		List<String> lista = new ArrayList<>();
+		
+		lista.add("José"); //add adiciona um item a lista
+		lista.add("Jader");
+		lista.add("João");
+		lista.add("Marcelo");
+		lista.add("Marco");
+		lista.add("Leandro");
+		lista.add("Almir");
+		lista.add("Tiago");
+		
+		lista.add(2, "Ana"); // adiciona na posição indicada
+		lista.add(3, "Marcia");
+		
+		
+		
+		System.out.println("Tamanho da lista: "+lista.size()); // size() retorna a quantidade de itens na lista
+		System.out.println();
+		
+		for (String nome : lista) {
+			System.out.println(nome);
+		}
+		System.out.println();
+		System.out.println("O João esta na posição "+lista.indexOf("João")+" da lista."); // indexOf() Retorna indice orientado pelo item a ser localizado.
+		
+		
+		System.out.println();
+		System.out.println("---------------------");
+		System.out.println();
+		
+		lista.remove("Leandro"); // Revome item da lista orientado por comparação.
+		lista.remove(8); // Remove item da lista orientado pela posição.
+		
+		for (String nome : lista) {
+			System.out.println(nome);
+		}
+		
+		System.out.println();
+		System.out.println("---------------------");
+		System.out.println();
+		
+		lista.removeIf(nome -> nome.charAt(0) == 'J'); // Remove orientado por um filtro.
+		
+		for (String nome : lista) {
+			System.out.println(nome);
+		}
+		
+		System.out.println();
+		System.out.println("---------------------");
+		System.out.println();
+		
+		List<String> listaFiltrada = lista.stream().filter(nome -> nome.charAt(0) == 'M').collect(Collectors.toList());
+		
+		for (String nome : listaFiltrada) {
+			System.out.println(nome);
+		}
+		
+		
+		sc.close();
+	}
+
+}

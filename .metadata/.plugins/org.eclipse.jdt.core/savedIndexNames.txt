@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+C:\Users\Pimenta House\Desktop\Jayr\Cursos\Curso Java Udemy\Projetos\.metadata\.plugins\org.eclipse.jdt.core

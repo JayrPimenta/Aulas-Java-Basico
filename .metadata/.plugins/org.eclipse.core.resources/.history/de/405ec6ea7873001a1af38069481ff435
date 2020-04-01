@@ -1,0 +1,47 @@
+package aplicacao;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Programa {
+
+	public static void main(String[] args) throws ParseException {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		
+		Date dataUm = sdf1.parse("25/06/2020");
+		Date dataDois = sdf2.parse("25/04/2020 15:22:05");
+		
+		System.out.println(dataUm);
+		System.out.println(dataDois);
+		
+		System.out.println("----------------------------");
+		
+		System.out.println(sdf1.format(dataUm));
+		System.out.println(sdf2.format(dataDois));
+		
+		System.out.println("----------------------------");
+		
+		Date agora = new Date();
+		System.out.println(sdf2.format(agora));
+		
+		System.out.println("----------------------------");
+		
+		Date agoraMiliSegundos = new Date(System.currentTimeMillis());
+		long mili = System.currentTimeMillis();
+		System.out.println(mili);
+		System.out.println(sdf2.format(agoraMiliSegundos));
+		
+		System.out.println("----------------------------");
+		
+		
+		sc.close();
+	}
+
+}

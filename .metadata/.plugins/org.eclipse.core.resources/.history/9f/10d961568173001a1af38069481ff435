@@ -1,0 +1,38 @@
+package aplicacao;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.util.Calendar;
+import java.util.Date;
+
+public class Programa {
+
+	public static void main(String[] args) throws ParseException {
+		
+		SimpleDateFormat formatoDaData = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		Date data = Date.from(Instant.parse("2020-03-31T15:39:54Z"));		
+		System.out.println(formatoDaData.format(data));
+		
+		Calendar calendario = Calendar.getInstance();
+		calendario.setTime(data);
+		
+		System.out.println("-------------------");
+
+		calendario.add(Calendar.HOUR_OF_DAY, 4);
+		data = calendario.getTime();
+		System.out.println(formatoDaData.format(data));
+		
+		calendario.add(Calendar.MINUTE, 10);
+		data = calendario.getTime();
+		System.out.println(formatoDaData.format(data));
+		
+		System.out.println(data);
+		calendario.add(Calendar.DAY_OF_WEEK, 2);
+		data = calendario.getTime();
+		System.out.println(data);
+		
+		System.out.println("-------------------");
+	}
+
+}

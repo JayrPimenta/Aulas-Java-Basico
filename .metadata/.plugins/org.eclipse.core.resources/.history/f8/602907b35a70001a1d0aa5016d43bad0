@@ -1,0 +1,31 @@
+package aplicacao;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Programa {
+
+	public static void main(String[] args) {
+
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		int tamanhoMatriz = sc.nextInt();
+		
+		int[][] matriz = new int[tamanhoMatriz][tamanhoMatriz];
+		
+		for (int linha = 0; linha < tamanhoMatriz; linha++) {
+			for (int coluna = 0; coluna < tamanhoMatriz; coluna++) {
+				matriz[linha][coluna] = sc.nextInt();
+			}
+		}
+		
+		System.out.println("Diagonal principal: ");
+		
+		System.out.println();
+		
+		sc.close();	
+
+	}
+
+}

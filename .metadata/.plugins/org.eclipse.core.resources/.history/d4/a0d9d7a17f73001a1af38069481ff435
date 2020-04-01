@@ -1,0 +1,20 @@
+package aplicacao;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.util.Date;
+
+public class Programa {
+
+	public static void main(String[] args) throws ParseException {
+		
+		SimpleDateFormat formatoDaData = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		
+		Date data = Date.from(Instant.parse("2020-03-31 15:39:54"));
+		
+		System.out.println(formatoDaData.format(data));
+
+	}
+
+}
