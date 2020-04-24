@@ -1,6 +1,6 @@
 package modelo.servicos;
 
-public class ServicoDeTaxasBrasileiras {
+public class ServicoDeTaxasBrasileiras implements ServicoDeTaxas{
 	
 	public Double taxa(Double valor) {	
 		if (valor <= 100D) {
